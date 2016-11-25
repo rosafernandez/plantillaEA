@@ -1,0 +1,27 @@
+<ion-view view-title="{{message}} {{subject.name}}">
+  <ion-content>
+    <ion-list show-reorder="reordering">
+      <!--<ion-item class="item-remove-animate item-icon-right" ng-repeat="estudiant in subject.estudiants" href="#/app/estudiants/{{estudiant}}" ng-click="selectEstudiant(estudiant)">-->
+        <!--<h2>{{estudiant}}</h2>-->
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="estudiant in estudiantsList" href="#/app/students/{{estudiant._id}}" ng-click="selectEstudiant(estudiant._id)">
+        <h2>{{estudiant.name}}</h2>
+        <!--<p>Localidad: {{estudiants.address}}</p>-->
+        <!--<a href="#/edit/{{user.id}}" class="button button-light icon ion-edit"></a>-->
+        <!--<ion-reorder-button class="ion-drag" on-reorder="move(user, $fromIndex, $toIndex)"></ion-reorder-button>-->
+        <!--<ion-option-button class="button-assertive icon-left ion-trash-b" ng-click="remove(user.id)">Delete</ion-option-button>-->
+      </ion-item>
+    </ion-list>
+    <br><br><br>
+
+    <div class="list list-inset">
+      <h4 style="text-align: center">Añadir estudiante</h4>
+      <label class="item item-input">
+        <input type="text" placeholder="Nombre" ng-model="updatedSubject.student" required>
+      </label>
+      <div class="button-bar">
+        <a class="button" ng-click="addEstudiant()" ng-disabled="myForm.$invalid || selected">Añadir</a>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
